@@ -1,0 +1,60 @@
+package views
+
+type NavBarItem struct {
+    Text string
+    Href string
+}
+
+templ CreateNavBar(navbarItems []NavBarItem) {
+    <header>
+        <nav>
+            <ul>
+                for _, item := range navbarItems {
+                    <li>
+                        <a
+                            href={templ.URL(item.Href)}
+                        >
+                        { item.Text }
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </header>
+    <br />
+    <h1>Test</h1>
+}
+
+templ CreateFooter(text string) {
+    <footer>
+        <p>
+            { text }
+        </p>
+    </footer>
+}
+
+templ CreateIndex(name string) {
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+
+        <script src="/static/htmx.js"></script>
+    </head>
+        <body>
+            <!-- NAVBAR -->
+            @CreateNavBar([]NavBarItem{
+                {Text: "Home", Href: "/"},
+                {Text: "About", Href: "/about"},
+                {Text: "Contact",Href: "/contact"},
+                },
+            )
+            <!-- MAIN -->
+            <h1>Hello { name } !</h1>
+            <!-- FOOTER -->
+            @CreateFooter("Contact us as 5555")
+        </body>
+    </html>
+}
