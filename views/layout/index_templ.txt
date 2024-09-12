@@ -1,0 +1,6 @@
+<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Home Page</title><script src=\"static/js/htmx.min.js\"></script><link rel=\"stylesheet\" href=\"/static/css/tailwind.css\" type=\"text/css\"></head>
+<!doctype html><html lang=\"en\">
+<body><!-- NAVBAR -->
+<!-- MAIN -->
+<!-- FOOTER -->
+</body></html>
