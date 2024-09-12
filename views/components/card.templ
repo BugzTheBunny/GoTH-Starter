@@ -1,0 +1,20 @@
+package components
+
+type CardData struct {
+    Title string
+    Text string
+}
+
+templ Card(cardData CardData) {
+    <div>
+        <div class="max-w-sm rounded overflow-hidden">
+        <div class="px-20 py-4">
+            <div class="text-xl mb-5">{cardData.Title}</div>
+            <p class="text-red-700 text-base">
+            {cardData.Text}
+            </p>
+        </div>
+        </div>
+        <div class="space-y-4"></div>
+    </div>
+}

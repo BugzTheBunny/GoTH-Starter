@@ -5,15 +5,7 @@ tmp_dir = "tmp"
 [build]
   args_bin = []
   bin = "tmp\\main.exe"
-
-  # With Build  #
-  # cmd = "templ generate && go build -o ./tmp/main.exe ./cmd"
-  ###############
-
-  #  No build   #
-  cmd = "templ generate && go run ./cmd/."
-  ###############
-
+  cmd = "go build -o ./tmp/main.exe ./cmd/main.go"
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor", "testdata"]
   exclude_file = []
@@ -22,7 +14,7 @@ tmp_dir = "tmp"
   follow_symlink = false
   full_bin = ""
   include_dir = []
-  include_ext = ["go", "tpl", "tmpl", "html"]
+  include_ext = ["go", "tpl", "tmpl", "html","templ"]
   include_file = []
   kill_delay = "0s"
   log = "build-errors.log"
@@ -34,6 +26,10 @@ tmp_dir = "tmp"
   rerun_delay = 500
   send_interrupt = false
   stop_on_error = false
+
+[watcher]
+  # These are the default extensions Air will watch for changes
+  extensions = ['go', 'templ', 'tpl', 'html', 'css', 'js']  # Add 'templ' here
 
 [color]
   app = ""

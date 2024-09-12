@@ -1,0 +1,37 @@
+package layout
+
+import "github.com/BugzTheBunny/GoTH-Starter/views/components"
+
+templ indexHead() {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <script src="static/js/htmx.min.js"></script>
+        <link rel="stylesheet" href="/static/css/tailwind.css" type="text/css"/>
+    </head>
+}
+
+templ CreateIndex(name string) {
+    <!DOCTYPE html>
+    <html lang="en">
+        @indexHead()
+        <body>
+            <!-- NAVBAR -->
+            @CreateNavBar([]NavBarItem{
+                {Text: "Home", Href: "/"},
+                {Text: "About", Href: "/about"},
+                {Text: "Contact",Href: "/contact"},
+                },
+            )
+            <!-- MAIN -->
+            @components.Card(components.CardData{
+                Title: "Noteworthy technology acquisitions 2021",
+                Text: "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+            })
+            <!-- FOOTER -->
+            @CreateFooter("Contact us as 5555")
+            
+        </body>
+    </html>
+}

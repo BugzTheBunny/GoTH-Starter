@@ -1,0 +1,17 @@
+{
+  "name": "goth-starter",
+  "version": "1.0.0",
+  "description": "This repo should be a starter project for a GoTH stack application.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss build static/css/tailwind_input.css -o static/css/tailwind.css",
+    "watch": "tailwindcss build static/css/tailwind_input.css -o static/css/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "goth-starter": "file:",
+    "tailwindcss": "^3.4.11"
+  }
+}
